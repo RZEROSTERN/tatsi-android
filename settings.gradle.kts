@@ -1,3 +1,5 @@
+
+
 pluginManagement {
     repositories {
         google()
@@ -12,5 +14,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+include ("app")
+
 rootProject.name = "Tatsi"
-include ':app'
