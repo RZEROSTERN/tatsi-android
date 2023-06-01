@@ -7,4 +7,8 @@
     <string name="tatsi_password">Contraseña</string>
     <string name="tatsi_no_account_question">¿No tienes cuenta?</string>
     <string name="tatsi_register">Regístrate</string>
+    <string name="tatsi_already_account_question">¿Ya tienes cuenta?</string>
+    <string name="tatsi_first_name">Nombre\n</string>
+    <string name="tatsi_last_name">Apellidos\n</string>
+    <string name="tatsi_phone">Número telefónico</string>
 </resources>

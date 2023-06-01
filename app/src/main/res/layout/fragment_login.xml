@@ -28,130 +28,148 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="@dimen/tatsi_50dp"
-        android:layout_marginRight="@dimen/tatsi_50dp"
-        android:layout_marginTop="@dimen/tatsi_100dp"
-        android:layout_marginBottom="@dimen/tatsi_100dp"
-        >
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/rounded_layout"
-            android:alpha="0.3" />
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/tatsi_100dp"
-                android:src="@drawable/ic_person"
-                android:layout_marginTop="@dimen/tatsi_10dp" />
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginLeft="@dimen/tatsi_50dp"
+                android:layout_marginRight="@dimen/tatsi_50dp"
+                android:layout_marginTop="@dimen/tatsi_100dp"
+                android:layout_marginBottom="@dimen/tatsi_100dp">
 
-            <TextView
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tatsi_login"
-                android:textColor="@color/white"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:textSize="@dimen/tatsi_18sp"
-                tools:text="Iniciar Sesión" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/tatsi_30dp"
-                android:layout_marginRight="@dimen/tatsi_30dp"
-                app:startIconDrawable="@drawable/ic_email"
-                app:startIconTint="@color/white"
-                android:textColorHint="@color/white" >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/tatsi_email"
-                    android:inputType="textEmailAddress"
-                    android:textSize="@dimen/tatsi_13sp"
-                    android:textColor="@color/white" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/tatsi_30dp"
-                android:layout_marginRight="@dimen/tatsi_30dp"
-                app:startIconDrawable="@drawable/ic_lock"
-                app:startIconTint="@color/white"
-                android:textColorHint="@color/white">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/tatsi_password"
-                    android:inputType="textPassword"
-                    android:textSize="@dimen/tatsi_13sp"
-                    android:textColor="@color/white" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tatsi_login"
-                android:textColor="@color/black"
-                android:layout_marginLeft="@dimen/tatsi_30dp"
-                android:layout_marginRight="@dimen/tatsi_30dp"
-                android:layout_marginTop="@dimen/tatsi_30dp"
-                android:layout_marginBottom="@dimen/tatsi_15dp" />
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_layout"
+                android:alpha="0.3" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <View
-                    android:layout_width="@dimen/tatsi_70dp"
-                    android:layout_height="@dimen/tatsi_1dp"
-                    android:background="@color/white"
-                    android:alpha="0.7" />
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/tatsi_100dp"
+                    android:src="@drawable/ic_person"
+                    android:layout_marginTop="@dimen/tatsi_10dp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tatsi_no_account_question"
+                    android:text="@string/tatsi_login"
                     android:textColor="@color/white"
-                    android:layout_marginLeft="@dimen/tatsi_5dp"
-                    android:layout_marginRight="@dimen/tatsi_5dp" />
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/tatsi_18sp"
+                    tools:text="Iniciar Sesión" />
 
-                <View
-                    android:layout_width="@dimen/tatsi_70dp"
-                    android:layout_height="@dimen/tatsi_1dp"
-                    android:background="@color/white"
-                    android:alpha="0.7" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/tatsi_30dp"
+                    android:layout_marginRight="@dimen/tatsi_30dp"
+                    app:startIconDrawable="@drawable/ic_email"
+                    app:startIconTint="@color/white"
+                    android:textColorHint="@color/white" >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/tatsi_email"
+                        android:inputType="textEmailAddress"
+                        android:textSize="@dimen/tatsi_13sp"
+                        android:textColor="@color/white" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/tatsi_30dp"
+                    android:layout_marginRight="@dimen/tatsi_30dp"
+                    app:startIconDrawable="@drawable/ic_lock"
+                    app:startIconTint="@color/white"
+                    android:textColorHint="@color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/tatsi_password"
+                        android:inputType="textPassword"
+                        android:textSize="@dimen/tatsi_13sp"
+                        android:textColor="@color/white" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/tatsi_btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tatsi_login"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="@dimen/tatsi_30dp"
+                    android:layout_marginRight="@dimen/tatsi_30dp"
+                    android:layout_marginTop="@dimen/tatsi_30dp"
+                    android:layout_marginBottom="@dimen/tatsi_15dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="@dimen/tatsi_70dp"
+                        android:layout_height="@dimen/tatsi_1dp"
+                        android:background="@color/white"
+                        android:alpha="0.7" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tatsi_no_account_question"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft="@dimen/tatsi_5dp"
+                        android:layout_marginRight="@dimen/tatsi_5dp" />
+
+                    <View
+                        android:layout_width="@dimen/tatsi_70dp"
+                        android:layout_height="@dimen/tatsi_1dp"
+                        android:background="@color/white"
+                        android:alpha="0.7" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/tatsi_btn_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tatsi_register"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="@dimen/tatsi_30dp"
+                    android:layout_marginRight="@dimen/tatsi_30dp"
+                    android:layout_marginTop="@dimen/tatsi_15dp"
+                    android:layout_marginBottom="@dimen/tatsi_30dp" />
             </LinearLayout>
+        </FrameLayout>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/tatsi_register"
-                android:textColor="@color/black"
-                android:layout_marginLeft="@dimen/tatsi_30dp"
-                android:layout_marginRight="@dimen/tatsi_30dp"
-                android:layout_marginTop="@dimen/tatsi_15dp"
-                android:layout_marginBottom="@dimen/tatsi_30dp" />
         </LinearLayout>
-    </FrameLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

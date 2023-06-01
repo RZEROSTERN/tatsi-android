@@ -13,4 +13,5 @@
     <dimen name="tatsi_1dp">1dp</dimen>
     <dimen name="tatsi_5dp">5dp</dimen>
     <dimen name="tatsi_15dp">15dp</dimen>
+    <dimen name="tatsi_75dp">75dp</dimen>
 </resources>
