@@ -8,11 +8,16 @@
     <string name="tatsi_no_account_question">¿No tienes cuenta?</string>
     <string name="tatsi_register">Regístrate</string>
     <string name="tatsi_already_account_question">¿Ya tienes cuenta?</string>
-    <string name="tatsi_first_name">Nombre\n</string>
-    <string name="tatsi_last_name">Apellidos\n</string>
+    <string name="tatsi_first_name">Nombre</string>
+    <string name="tatsi_last_name">Apellidos</string>
     <string name="tatsi_phone">Número telefónico</string>
     <string name="tatsi_email_empty_error">El correo electrónico es requerido</string>
     <string name="tatsi_password_empty_error">La contraseña es requerida</string>
     <string name="tatsi_password_minlength_error">La contraseña debe tener al menos 6 caracteres</string>
     <string name="tatsi_test_form">Valid form !!!</string>
+    <string name="tatsi_password_confirm">Confirmar contraseña</string>
+    <string name="tatsi_first_name_empty_error">El nombre es requerido</string>
+    <string name="tatsi_first_last_empty_error">El apellido es requerido</string>
+    <string name="tatsi_phone_empty_error">El teléfono es requerido</string>
+    <string name="tatsi_password_no_match_error">Los campos de contraseña no coinciden</string>
 </resources>
