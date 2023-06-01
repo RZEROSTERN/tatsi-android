@@ -2,4 +2,9 @@
     <string name="app_name">Tatsi</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tatsi_login">Iniciar sesión</string>
+    <string name="tatsi_email">Correo electrónico</string>
+    <string name="tatsi_password">Contraseña</string>
+    <string name="tatsi_no_account_question">¿No tienes cuenta?</string>
+    <string name="tatsi_register">Regístrate</string>
 </resources>
