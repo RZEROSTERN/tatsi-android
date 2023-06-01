@@ -24,22 +24,30 @@ class LoginFragment : Fragment() {
         binding = FragmentLoginBinding.inflate(layoutInflater)
 
         initView()
+        initObservers()
 
         return binding.root
     }
 
     private fun initView() {
         binding.tatsiBtnLogin.setOnClickListener {
-            if(!validateLoginForm()) {
+            /*if(!validateLoginForm()) {
                 // Should do the login stuff
                 Toast.makeText(requireContext(),
                     resources.getString(R.string.tatsi_test_form), Toast.LENGTH_LONG).show()
-            }
+            }*/
+            viewModel.signIn()
         }
 
         binding.tatsiBtnRegister.setOnClickListener {
             findNavController().navigate(
                 R.id.action_loginFragment_to_registerFragment)
+        }
+    }
+
+    private fun initObservers() {
+        viewModel.signInResponse.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), "Foo", Toast.LENGTH_LONG).show()
         }
     }
 
