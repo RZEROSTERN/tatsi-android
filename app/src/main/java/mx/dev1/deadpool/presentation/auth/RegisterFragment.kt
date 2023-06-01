@@ -28,4 +28,8 @@ class RegisterFragment : Fragment() {
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
     }
+
+    private fun validateRegisterForm(): Boolean {
+        return true
+    }
 }

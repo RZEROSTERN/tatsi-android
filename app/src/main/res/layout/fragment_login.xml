@@ -81,6 +81,7 @@
                     tools:text="Iniciar Sesión" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tatsi_txtl_email_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/tatsi_30dp"
@@ -90,6 +91,7 @@
                     android:textColorHint="@color/white" >
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tatsi_txt_email_login"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/tatsi_email"
@@ -100,6 +102,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tatsi_txtl_password_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/tatsi_30dp"
@@ -109,6 +112,7 @@
                     android:textColorHint="@color/white">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tatsi_txt_password_login"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/tatsi_password"

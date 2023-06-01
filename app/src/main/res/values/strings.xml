@@ -11,4 +11,8 @@
     <string name="tatsi_first_name">Nombre\n</string>
     <string name="tatsi_last_name">Apellidos\n</string>
     <string name="tatsi_phone">Número telefónico</string>
+    <string name="tatsi_email_empty_error">El correo electrónico es requerido</string>
+    <string name="tatsi_password_empty_error">La contraseña es requerida</string>
+    <string name="tatsi_password_minlength_error">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="tatsi_test_form">Valid form !!!</string>
 </resources>
