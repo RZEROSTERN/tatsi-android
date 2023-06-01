@@ -2,7 +2,10 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Tatsi" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/taxi_yellow_bg</item>
+        <item name="colorAccent">@color/black</item>
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/taxi_yellow_bg</item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">@drawable/taxi</item>
     </style>
 
     <style name="Theme.Tatsi" parent="Base.Theme.Tatsi" />

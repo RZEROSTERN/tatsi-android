@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="taxi_yellow_bg">#FFFFC005</color>
+    <color name="taxi_yellow_accent">#FFFFD772</color>
 </resources>
