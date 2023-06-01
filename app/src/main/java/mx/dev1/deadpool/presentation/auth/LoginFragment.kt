@@ -1,6 +1,5 @@
 package mx.dev1.deadpool.presentation.auth
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,7 +11,6 @@ import mx.dev1.deadpool.R
 import mx.dev1.deadpool.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
-
     private val viewModel: AuthViewModel by viewModels()
     private lateinit var binding: FragmentLoginBinding
 
@@ -29,7 +27,8 @@ class LoginFragment : Fragment() {
 
     private fun initView() {
         binding.tatsiBtnRegister.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+            findNavController().navigate(
+                R.id.action_loginFragment_to_registerFragment)
         }
     }
 }
