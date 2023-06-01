@@ -1,9 +1,7 @@
 package mx.dev1.deadpool
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
 
-class MainApplication : Application() {
-    override fun onCreate() {
-        super.onCreate()
-    }
-}
+@HiltAndroidApp
+class MainApplication : Application()

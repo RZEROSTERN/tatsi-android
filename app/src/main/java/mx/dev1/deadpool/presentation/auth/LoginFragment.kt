@@ -8,9 +8,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import mx.dev1.deadpool.R
 import mx.dev1.deadpool.databinding.FragmentLoginBinding
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
     private val viewModel: AuthViewModel by viewModels()
     private lateinit var binding: FragmentLoginBinding
