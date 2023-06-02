@@ -4,15 +4,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.StateFlow
 import mx.dev1.deadpool.domain.models.Response
 
-typealias AuthStateResponse = StateFlow<Boolean>
-typealias SignInResponse = Response<Boolean>
-typealias SignOutResponse = Response<Boolean>
-
-
 interface AuthRepository {
-    fun getAuthState(viewModelScope: CoroutineScope): AuthStateResponse
+    fun getAuthState(viewModelScope: CoroutineScope): StateFlow<Boolean>
 
-    suspend fun firebaseSignInAnonymously(): SignInResponse
+    suspend fun firebaseSignInAnonymously(): Response<Boolean>
 
-    suspend fun firebaseSignOut(): SignOutResponse
+    suspend fun firebaseSignOut(): Response<Boolean>
 }

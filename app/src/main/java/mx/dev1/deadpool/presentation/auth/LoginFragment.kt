@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import mx.dev1.deadpool.R
 import mx.dev1.deadpool.databinding.FragmentLoginBinding
+import mx.dev1.deadpool.domain.models.Response.Success
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
@@ -47,7 +48,9 @@ class LoginFragment : Fragment() {
 
     private fun initObservers() {
         viewModel.signInResponse.observe(viewLifecycleOwner) {
-            Toast.makeText(requireContext(), "Foo", Toast.LENGTH_LONG).show()
+            if(it is Success) {
+                Toast.makeText(requireContext(), "Foo", Toast.LENGTH_LONG).show()
+            }
         }
     }
 
