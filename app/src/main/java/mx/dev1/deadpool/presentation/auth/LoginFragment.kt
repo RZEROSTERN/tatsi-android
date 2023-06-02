@@ -12,7 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import mx.dev1.deadpool.R
 import mx.dev1.deadpool.databinding.FragmentLoginBinding
 import mx.dev1.deadpool.domain.models.Response.Success
-
+import mx.dev1.deadpool.domain.models.Response.Loading
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
     private val viewModel: AuthViewModel by viewModels()
@@ -32,12 +32,12 @@ class LoginFragment : Fragment() {
 
     private fun initView() {
         binding.tatsiBtnLogin.setOnClickListener {
-            /*if(!validateLoginForm()) {
-                // Should do the login stuff
-                Toast.makeText(requireContext(),
-                    resources.getString(R.string.tatsi_test_form), Toast.LENGTH_LONG).show()
-            }*/
-            viewModel.signIn()
+            if(!validateLoginForm()) {
+                viewModel.signIn(
+                    binding.tatsiTxtEmailLogin.text.toString(),
+                    binding.tatsiTxtPasswordLogin.text.toString()
+                )
+            }
         }
 
         binding.tatsiBtnRegister.setOnClickListener {
@@ -48,9 +48,17 @@ class LoginFragment : Fragment() {
 
     private fun initObservers() {
         viewModel.signInResponse.observe(viewLifecycleOwner) {
-            if(it is Success) {
-                Toast.makeText(requireContext(), "Foo", Toast.LENGTH_LONG).show()
+            if(it is Loading) {
+                Toast.makeText(requireContext(), "Loading...", Toast.LENGTH_LONG).show()
+                binding.tatsiBtnLogin.visibility = View.INVISIBLE
+            } else if(it is Success) {
+                Toast.makeText(requireContext(), "Success !!!", Toast.LENGTH_LONG).show()
             }
+        }
+
+        viewModel.errorResponse.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it.e.message, Toast.LENGTH_LONG).show()
+            binding.tatsiBtnLogin.visibility = View.VISIBLE
         }
     }
 

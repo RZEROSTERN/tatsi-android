@@ -12,11 +12,12 @@ import mx.dev1.deadpool.domain.repositories.AuthRepository
 import mx.dev1.deadpool.domain.usecases.GetAuthState
 import mx.dev1.deadpool.domain.usecases.SignIn
 import mx.dev1.deadpool.domain.usecases.SignOut
+import mx.dev1.deadpool.domain.usecases.SignUp
 import mx.dev1.deadpool.domain.usecases.UseCases
 
 @Module
 @InstallIn(SingletonComponent::class)
-class AppModule {
+object AppModule {
     @Provides
     fun provideFirebaseAuth() = Firebase.auth
 
@@ -31,6 +32,7 @@ class AppModule {
     ) = UseCases(
         getAuthState = GetAuthState(repo),
         signIn = SignIn(repo),
-        signOut = SignOut(repo)
+        signOut = SignOut(repo),
+        signUp = SignUp(repo)
     )
 }

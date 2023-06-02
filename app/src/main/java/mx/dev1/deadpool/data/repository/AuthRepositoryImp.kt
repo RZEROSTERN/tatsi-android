@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.tasks.await
+import mx.dev1.deadpool.domain.models.Response
 import mx.dev1.deadpool.domain.models.Response.Success
 import mx.dev1.deadpool.domain.models.Response.Failure
 import mx.dev1.deadpool.domain.repositories.AuthRepository
@@ -31,6 +32,20 @@ class AuthRepositoryImp @Inject constructor(
         auth.signInAnonymously().await()
         Success(true)
     } catch (e: Exception) {
+        Failure(e)
+    }
+
+    override suspend fun firebaseSignIn(email: String, password: String) = try {
+        auth.signInWithEmailAndPassword(email, password).await()
+        Success(true)
+    } catch(e: Exception) {
+        Failure(e)
+    }
+
+    override suspend fun firebaseSignUp(email: String, password: String) = try {
+        auth.createUserWithEmailAndPassword(email, password).await()
+        Success(true)
+    } catch(e: Exception) {
         Failure(e)
     }
 

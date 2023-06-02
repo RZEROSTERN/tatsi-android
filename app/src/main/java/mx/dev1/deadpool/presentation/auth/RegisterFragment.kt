@@ -1,19 +1,23 @@
 package mx.dev1.deadpool.presentation.auth
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import mx.dev1.deadpool.R
 import mx.dev1.deadpool.databinding.FragmentRegisterBinding
+import mx.dev1.deadpool.domain.models.Response
 
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
     private lateinit var binding: FragmentRegisterBinding
+    private val viewModel: AuthViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,20 +26,41 @@ class RegisterFragment : Fragment() {
         binding = FragmentRegisterBinding.inflate(inflater)
 
         initView()
+        initObservers()
 
         return binding.root
     }
 
     private fun initView() {
         binding.tatsiBtnRegisterSubmit.setOnClickListener {
-            if(validateRegisterForm()) {
-                Toast.makeText(requireContext(),
-                    resources.getText(R.string.tatsi_test_form), Toast.LENGTH_LONG).show()
+            if(!validateRegisterForm()) {
+                viewModel.signUp(
+                    binding.tatsiTxtEmailRegister.text.toString(),
+                    binding.tatsiTxtPasswordRegister.text.toString()
+                )
+            } else {
+                Log.d("TAG", "Error")
             }
         }
 
         binding.tatsiBtnLoginNavigate.setOnClickListener {
             findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
+    }
+
+    private fun initObservers() {
+        viewModel.signUpResponse.observe(viewLifecycleOwner) {
+            if(it is Response.Loading) {
+                Toast.makeText(requireContext(), "Loading...", Toast.LENGTH_LONG).show()
+                binding.tatsiBtnRegisterSubmit.visibility = View.INVISIBLE
+            } else if(it is Response.Success) {
+                Toast.makeText(requireContext(), "Success !!!", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        viewModel.errorResponse.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it.e.message, Toast.LENGTH_LONG).show()
+            binding.tatsiBtnRegisterSubmit.visibility = View.VISIBLE
         }
     }
 
@@ -84,7 +109,7 @@ class RegisterFragment : Fragment() {
                 resources.getString(R.string.tatsi_password_empty_error)
             hasErrors = true
         } else {
-            binding.tatsiTxtlEmailRegister.error = null
+            binding.tatsiTxtlPasswordRegister.error = null
         }
 
         if(binding.tatsiTxtPasswordRegister.text.toString().length < 6) {
