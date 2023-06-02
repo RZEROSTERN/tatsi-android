@@ -1,4 +1,4 @@
-package mx.dev1.deadpool.domain.usecases
+package mx.dev1.deadpool.domain.usecases.auth
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.StateFlow

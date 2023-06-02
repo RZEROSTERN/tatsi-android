@@ -9,10 +9,10 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import mx.dev1.deadpool.data.repository.AuthRepositoryImp
 import mx.dev1.deadpool.domain.repositories.AuthRepository
-import mx.dev1.deadpool.domain.usecases.GetAuthState
-import mx.dev1.deadpool.domain.usecases.SignIn
-import mx.dev1.deadpool.domain.usecases.SignOut
-import mx.dev1.deadpool.domain.usecases.SignUp
+import mx.dev1.deadpool.domain.usecases.auth.GetAuthState
+import mx.dev1.deadpool.domain.usecases.auth.SignIn
+import mx.dev1.deadpool.domain.usecases.auth.SignOut
+import mx.dev1.deadpool.domain.usecases.auth.SignUp
 import mx.dev1.deadpool.domain.usecases.UseCases
 
 @Module

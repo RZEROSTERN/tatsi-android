@@ -1,4 +1,4 @@
-package mx.dev1.deadpool.domain.usecases
+package mx.dev1.deadpool.domain.usecases.auth
 
 import mx.dev1.deadpool.domain.repositories.AuthRepository
 
