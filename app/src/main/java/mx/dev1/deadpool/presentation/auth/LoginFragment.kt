@@ -53,6 +53,7 @@ class LoginFragment : Fragment() {
                 binding.tatsiBtnLogin.visibility = View.INVISIBLE
             } else if(it is Success) {
                 Toast.makeText(requireContext(), "Success !!!", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_loginFragment_to_dashboard)
             }
         }
 

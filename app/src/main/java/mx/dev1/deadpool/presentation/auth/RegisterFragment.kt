@@ -38,8 +38,6 @@ class RegisterFragment : Fragment() {
                     binding.tatsiTxtEmailRegister.text.toString(),
                     binding.tatsiTxtPasswordRegister.text.toString()
                 )
-            } else {
-                Log.d("TAG", "Error")
             }
         }
 
