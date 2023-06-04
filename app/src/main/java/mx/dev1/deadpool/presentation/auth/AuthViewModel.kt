@@ -21,7 +21,7 @@ class AuthViewModel @Inject constructor(
     val signInResponse: LiveData<Response<Any>> get() = signInResponseMutable
 
     private val signUpResponseMutable = MutableLiveData<Response<Any>>()
-    val signUpResponse: LiveData<Response<Any>> get() = signUpResponse
+    val signUpResponse: LiveData<Response<Any>> get() = signUpResponseMutable
     private val signOutResponseMutable = MutableLiveData<Response<Any>>()
     val signOutResponse: LiveData<Response<Any>> get() = signOutResponseMutable
     private val errorResponseMutable = MutableLiveData<Failure>()

@@ -3,6 +3,7 @@ package mx.dev1.deadpool.data.repository
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.SharingStarted
@@ -12,6 +13,7 @@ import kotlinx.coroutines.tasks.await
 import mx.dev1.deadpool.domain.models.Response
 import mx.dev1.deadpool.domain.models.Response.Success
 import mx.dev1.deadpool.domain.models.Response.Failure
+import mx.dev1.deadpool.domain.models.User
 import mx.dev1.deadpool.domain.repositories.AuthRepository
 import javax.inject.Inject
 
@@ -42,8 +44,27 @@ class AuthRepositoryImp @Inject constructor(
         Failure(e)
     }
 
-    override suspend fun firebaseSignUp(email: String, password: String) = try {
+    override suspend fun firebaseSignUp(
+        email: String, password: String,
+        firstName: String, lastName: String, phone: String
+    ) = try {
         auth.createUserWithEmailAndPassword(email, password).await()
+        val user = auth.currentUser
+
+        user?.let {
+            var uid = ""
+            for(profile in it.providerData) {
+                uid = profile.uid
+            }
+
+            val user = User(
+                id = uid,
+                firstName = firstName,
+                lastName = lastName,
+                phone = phone
+            )
+        }
+
         Success(true)
     } catch(e: Exception) {
         Failure(e)
