@@ -11,6 +11,7 @@ class UserRepositoryImp @Inject constructor(
 ) : UserRepository {
     override suspend fun insertProfileInfo(user: User) {
         firestore.document(user.id).set(user)
+        // Just chillin'
         return
     }
 }
