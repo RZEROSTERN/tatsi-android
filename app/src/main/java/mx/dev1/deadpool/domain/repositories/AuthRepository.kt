@@ -14,5 +14,5 @@ interface AuthRepository {
     suspend fun firebaseSignUp(
         email: String, password: String,
         firstName: String, lastName: String, phone: String
-    ): Response<Boolean>
+    ): Response<Any?>
 }

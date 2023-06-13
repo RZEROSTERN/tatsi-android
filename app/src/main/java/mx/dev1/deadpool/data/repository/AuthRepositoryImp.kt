@@ -50,22 +50,7 @@ class AuthRepositoryImp @Inject constructor(
     ) = try {
         auth.createUserWithEmailAndPassword(email, password).await()
         val user = auth.currentUser
-
-        user?.let {
-            var uid = ""
-            for(profile in it.providerData) {
-                uid = profile.uid
-            }
-
-            val user = User(
-                id = uid,
-                firstName = firstName,
-                lastName = lastName,
-                phone = phone
-            )
-        }
-
-        Success(true)
+        Success(user)
     } catch(e: Exception) {
         Failure(e)
     }
