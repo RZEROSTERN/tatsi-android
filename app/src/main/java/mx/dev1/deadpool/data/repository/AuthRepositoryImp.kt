@@ -3,17 +3,14 @@ package mx.dev1.deadpool.data.repository
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.tasks.await
-import mx.dev1.deadpool.domain.models.Response
 import mx.dev1.deadpool.domain.models.Response.Success
 import mx.dev1.deadpool.domain.models.Response.Failure
-import mx.dev1.deadpool.domain.models.User
 import mx.dev1.deadpool.domain.repositories.AuthRepository
 import javax.inject.Inject
 
