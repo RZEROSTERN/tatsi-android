@@ -30,13 +30,6 @@ class AuthRepositoryImp @Inject constructor(
         }
     }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), auth.currentUser == null)
 
-    override suspend fun firebaseSignInAnonymously() = try {
-        auth.signInAnonymously().await()
-        Success(true)
-    } catch (e: Exception) {
-        Failure(e)
-    }
-
     override suspend fun firebaseSignIn(email: String, password: String) = try {
         auth.signInWithEmailAndPassword(email, password).await()
         Success(true)
