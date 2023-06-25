@@ -1,6 +1,5 @@
 package mx.dev1.deadpool.data.repository
 
-import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuth.AuthStateListener
 import kotlinx.coroutines.CoroutineScope
