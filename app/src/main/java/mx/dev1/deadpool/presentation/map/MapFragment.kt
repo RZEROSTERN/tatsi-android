@@ -10,10 +10,6 @@ import mx.dev1.deadpool.R
 
 class MapFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = MapFragment()
-    }
-
     private lateinit var viewModel: MapViewModel
 
     override fun onCreateView(
