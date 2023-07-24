@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import mx.dev1.deadpool.R
 
 class MapFragment : Fragment() {
-
     private lateinit var viewModel: MapViewModel
 
     override fun onCreateView(
@@ -24,5 +23,4 @@ class MapFragment : Fragment() {
         viewModel = ViewModelProvider(this).get(MapViewModel::class.java)
         // TODO: Use the ViewModel
     }
-
 }
